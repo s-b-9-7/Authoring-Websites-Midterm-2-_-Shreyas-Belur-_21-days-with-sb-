@@ -1,0 +1,185 @@
+//Part I: Problem Set
+//1.Write a multi-line comment with your name in one line and your student ID in another line. 
+
+console.log("Hsiu-Ping Lin\n402693756")
+
+//2.Write an expression that calculates the area of a triangle with base and height defined as variables with values of your choice.
+
+const base = 6;
+const height = 4;
+const triangle = base * height / 2;
+console.log("The area is: " + triangle);
+
+//4.Write a single expression that displays the following message: 
+//The sum of 5 and 3 is: 8
+//Specify  8 results from the arithmetic expression 5 + 3.
+
+const num1 = 5;
+const num2 = 3;
+console.log('The sum of num1 and num2 is:', num1 + num2);
+
+//5.Write a single expression that displays the following message:
+//My age is 33 years old.
+//Specify your age as a variable.
+
+const Age = 33;
+console.log("My age is " + Age + " years old.");
+
+//6.Write a single expression that displays the following message:
+//In JavaScript, we use the backslash (\) to escape special characters.
+
+console.log("In JavaScript, we use the backslash (\\) to escape special characters.");
+
+//7.Write a single expression that displays the following message:
+//Einstein once said: "Life is like riding a bicycle. To keep your balance, you must keep moving."
+
+console.log('Einstein once said: "Life is like riding a bicycle. To keep your balance, you must keep moving."');
+
+//8.Write an expression that takes two numbers defined as variables with values of your choice and evaluates whether the first number is greater or equal to //the second. 
+
+const num1 = 1;
+const num2 = 2;
+const comp = num1 >= num2;
+console.log("Is the first number greater or equal to the second one? " + comp);
+
+//9.Write an expression that evaluates whether two numeric values defined with values of your choice satisfy the following condition: 
+//the first number is greater than the second, and the second number is greater than 0.
+
+const num1 = 2;
+const num2 = 1;
+const cond = (num1 > num2) && (num2 > 0);
+console.log("Do the two values satisfy the condition? " + cond);
+
+//10.Write an expression that evaluates whether two numeric values defined with values of your choice satisfy the following condition: 
+//both numbers are equal or the second number is less than 10.
+
+const num1 = 2;
+const num2 = 1;
+const cond = (num1 == num2) || (num2 < 10);
+console.log("Do the two values satisfy the condition? " + cond);
+
+
+
+//Part II: Implementing a Basic Calculator
+
+// Add the values from input fields
+function add() {
+
+/* The expression below obtains the value from the input 
+  element in the form with id attribute equals to operand1. */
+
+  let operand1 = document.querySelector("#operand1").value;
+  console.log(operand1);
+  
+/* Note that the value is a string.
+   Thus, we need to convert the string value to a number to
+   perform arithmetic operations.
+*/
+
+console.log(typeof operand1);
+  
+  // The parseInt function converts a string containing a number into a number
+  operand1 = parseInt(operand1);
+  
+  console.log(typeof operand1);
+
+  /* COMPLETE THIS FUNCTION */
+  let operand2 = document.querySelector("#operand2").value;
+  console.log(operand2);
+ 
+ console.log(typeof operand2);
+    
+  operand2 = parseInt(operand2);  
+  console.log(typeof operand2);
+
+  let result = operand1 + operand2;  
+  console.log(result);
+
+  /* The expression below updates the value of the input element in the form
+  with id attribute equals to result. */
+  document.querySelector("#result").value = result;  
+}
+
+// Substract the values from input fields
+function substract() {
+  /* COMPLETE THIS FUNCTION */
+  let operand1 = document.querySelector("#operand1").value;
+  console.log(operand1);
+  
+console.log(typeof operand1);
+  
+  operand1 = parseInt(operand1);  
+  console.log(typeof operand1);
+  
+  let operand2 = document.querySelector("#operand2").value;
+  console.log(operand2);
+ 
+ console.log(typeof operand2);
+    
+  operand2 = parseInt(operand2);  
+  console.log(typeof operand2);
+
+  let result = operand1 - operand2;  
+  console.log(result);
+
+  document.querySelector("#result").value = result;  
+
+}
+
+// Multiply the values from input fields
+function multiply() {
+  /* COMPLETE THIS FUNCTION */
+  let operand1 = document.querySelector("#operand1").value;
+  console.log(operand1);
+  
+console.log(typeof operand1);
+  
+  operand1 = parseInt(operand1);  
+  console.log(typeof operand1);
+  
+  let operand2 = document.querySelector("#operand2").value;
+  console.log(operand2);
+ 
+ console.log(typeof operand2);
+    
+  operand2 = parseInt(operand2);  
+  console.log(typeof operand2);
+
+  let result = operand1 * operand2;  
+  console.log(result);
+
+  document.querySelector("#result").value = result; 
+}
+
+// Divide the values from input fields
+function divide() {
+  /* COMPLETE THIS FUNCTION */
+  let operand1 = document.querySelector("#operand1").value;
+  console.log(operand1);
+  
+console.log(typeof operand1);
+  
+  operand1 = parseInt(operand1);  
+  console.log(typeof operand1);
+  
+  let operand2 = document.querySelector("#operand2").value;
+  console.log(operand2);
+ 
+ console.log(typeof operand2);
+    
+  operand2 = parseInt(operand2);  
+  console.log(typeof operand2);
+  
+  let result = operand1 / operand2;  
+  console.log(result);
+
+  document.querySelector("#result").value = result;
+}
+
+// Clear input fields
+function clearInput() {
+	document.querySelector("#operand1").value = "";
+	document.querySelector("#operand2").value = "";
+  document.querySelector("#result").value = "";
+}
+
