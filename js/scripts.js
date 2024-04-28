@@ -1,81 +1,50 @@
 /*!
-* Start Bootstrap - Blog Post v5.0.9 (https://startbootstrap.com/template/blog-post)
-* Copyright 2013-2023 Start Bootstrap
-* Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-blog-post/blob/master/LICENSE)
-*/
+ * Start Bootstrap - Blog Post v5.0.9 (https://startbootstrap.com/template/blog-post)
+ * Copyright 2013-2023 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-blog-post/blob/master/LICENSE)
+ */
 // This file is intentionally blank
 // Use this file to add JavaScript to your project
 
-var isContentShown_1 = false; 
-var isContentShown_2 = false;
-var isContentShown_3 = false;
-var isContentShown_4 = false;
-var isContentShown_5 = false;
-var isContentShown_6 = false;
+// Flags indicating whether additional content has been shown for each card
+var isContentShown = [false, false, false, false, false, false];
 
+// Function to toggle extra content for a given card
 function showMoreContent(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 1 && !isContentShown_1) {
-        var cardText = document.querySelector('#card-text-1');
-        cardText.innerHTML += " Workstations (DAWs). These programs let composers record, edit, and mix music using virtual instruments and effects. Computers also help connect keyboards and controllers for playing and controlling these instruments, making composing easier.";
+    event.preventDefault(); // Prevent default link behavior
 
-        isContentShown_1 = true;
+    // Validate cardIndex to prevent out-of-bounds errors
+    if (cardIndex < 1 || cardIndex > 6) return;
+
+    // Get the corresponding card text element
+    var cardText = document.querySelector(`#card-text-${cardIndex}`);
+
+    // Append additional content based on the cardIndex and the flag status
+    if (!isContentShown[cardIndex - 1]) {
+        switch (cardIndex) {
+            case 1:
+                cardText.innerHTML += " Unleash change with '21 Days with Shreyas Belur.' The goal is to find out if the idea that it takes 21 days to build a habit is true, as we overcome various challenges to promote personal growth.";
+                break;
+            case 2:
+                cardText.innerHTML += " Explore why 21 days is the number chosen for habit-building. Ancient wisdom claims 21 days can build habits; we're here to test it with challenges that encourage intentional evolution.";
+                break;
+            case 3:
+                cardText.innerHTML += " Introducing Shreyas Belur, your quintessential average guy. He leads these challenges, showing that anyone can embark on a journey of personal development and find success.";
+                break;
+            case 4:
+                cardText.innerHTML += " This journey blends entertainment and enlightenment, steering towards self-refinement. It is designed to be an impactful resource for those who believe in the power of small steps to achieve growth.";
+                break;
+            case 5:
+                cardText.innerHTML += " The newsletter provides a curated list of high-quality resources and introduces up-and-coming thought leaders in the self-development space. It's a must-have for those seeking positive change.";
+                break;
+            case 6:
+                cardText.innerHTML += " Join the newsletter to receive original articles and additional resources for your self-development journey. Discover new ways to grow and learn from experts and like-minded individuals.";
+                break;
+            default:
+                return; // No additional content for invalid cardIndex
+        }
+
+        // Set the flag to true, indicating that the content has been expanded
+        isContentShown[cardIndex - 1] = true;
     }
 }
-
-function showMoreContent2(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 2 && !isContentShown_2) {
-        var cardText = document.querySelector('#card-text-2');
-        cardText.innerHTML += " arrange music tracks, and it has features like virtual instruments and audio effects. DAWs are like studios on your computer, where you can create and polish your music until it sounds just right.";
-
-        isContentShown_2 = true;
-    }
-}
-
-function showMoreContent3(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 3 && !isContentShown_3) {
-        var cardText = document.querySelector('#card-text-3');
-        cardText.innerHTML += " With its keys sensitive to touch, it captures the dynamics of playing like a traditional instrument. This makes inputting melodies and chords into recording software easier. It's like having a musical instrument that connects directly to your computer, making it simpler to create music that sounds just the way you want.";
-
-        isContentShown_3 = true;
-    }
-}
-
-function showMoreContent4(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 4 && !isContentShown_4) {
-        var cardText = document.querySelector('#card-text-4');
-        cardText.innerHTML += " mixing and mastering, letting producers make precise adjustments to ensure the music sounds great on any system. Having good speakers or headphones is key to making professional-quality music.";
-
-        isContentShown_4 = true;
-    }
-}
-
-function showMoreContent5(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 5 && !isContentShown_5) {
-        var cardText = document.querySelector('#card-text-5');
-        cardText.innerHTML += " into their computer. They can plug in instruments or microphones and capture their performances with clarity. It's like having a professional recording studio at home, making it easier to add live instruments or vocals to compositions and get great-sounding recordings without hassle.";
-
-        isContentShown_5 = true;
-    }
-}
-
-function showMoreContent6(event, cardIndex) {
-    event.preventDefault(); 
-    
-    if (cardIndex === 6 && !isContentShown_6) {
-        var cardText = document.querySelector('#card-text-6');
-        cardText.innerHTML += " and emotion to compositions, allowing live performances and vocal tracks. With different types available for various recording needs, composers can personalize their music and authentically bring their ideas to life.";
-
-        isContentShown_6 = true;
-    }
-}
-
